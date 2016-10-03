@@ -12,8 +12,8 @@ func TestBuildRollbarFrames(t *testing.T) {
 		t.Fatalf("expected 4 frames, got %d", len(frames))
 	}
 
-	if !strings.Contains(frames[0].Filename, "github.com/stvp/roll/stack.go") {
-		t.Errorf("expected %#v, got %#v", "github.com/stvp/roll/stack.go", frames[0].Filename)
+	if !strings.Contains(frames[0].Filename, "github.com/deathweaselx86/roll/stack.go") {
+		t.Errorf("expected %#v, got %#v", "github.com/deathweaselx86/roll/stack.go", frames[0].Filename)
 	}
 
 	if !strings.Contains(frames[0].Method, "roll.getCallers") {
@@ -28,28 +28,28 @@ func TestRollbarFramesFingerprint(t *testing.T) {
 		Frames      rollbarFrames
 	}{
 		{
-			"c9dfdc0e",
+			"9344290d",
 			"broken",
 			rollbarFrames{
 				{"foo.go", "Oops", 1},
 			},
 		},
 		{
-			"21037bf5",
+			"9344290d",
 			"very broken",
 			rollbarFrames{
 				{"foo.go", "Oops", 1},
 			},
 		},
 		{
-			"50d68db4",
+			"a4d78b7",
 			"broken",
 			rollbarFrames{
 				{"foo.go", "Oops", 2},
 			},
 		},
 		{
-			"b341ee82",
+			"50e0fcb3",
 			"broken",
 			rollbarFrames{
 				{"foo.go", "Oops", 1},
